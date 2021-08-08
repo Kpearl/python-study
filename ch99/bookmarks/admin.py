@@ -1,3 +1,6 @@
 from django.contrib import admin
+from bookmarks.models import Bookmarks
 
-# Register your models here.
+@admin.register(Bookmarks)
+class BookmarkAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'url')
